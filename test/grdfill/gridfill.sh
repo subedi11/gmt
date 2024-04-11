@@ -10,6 +10,7 @@
 # The file earth_relief_20m_holes.grd is stored in the cache
 # Try filling in the holes via sampling from a coarser 1d grid
 gmt begin gridfill
+	gmt set GMT_VERBOSE debug
 	gmt makecpt -Cgeo
 	gmt grdfill @earth_relief_20m_holes.grd -Ag@earth_relief_01d -Gnew.grd
 	gmt subplot begin 2x1 -R0/10/0/10 -JQ10c -Fs10c -Sc -Sr -A1+gwhite+r
