@@ -162,7 +162,7 @@ jobs:
           cd build
           # Disable MinGW's path conversion, see #1035.
           if [ "$RUNNER_OS" == "Windows" ]; then export MSYS_NO_PATHCONV=1; fi
-          ctest -R test/grdfill/gridfill.sh
+          ctest -R test/grdfill/gridfill.sh -VV
           # Run tests
           # ctest ${CTEST_ARGS} || ctest ${CTEST_ARGS} --rerun-failed || ctest ${CTEST_ARGS} --rerun-failed
           # show the slowest tests
