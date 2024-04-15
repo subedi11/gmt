@@ -12,7 +12,7 @@
 gmt begin gridfill
 	gmt set GMT_VERBOSE debug
 	gmt makecpt -Cgeo
-	gmt grdfill @earth_relief_20m_holes.grd -Ag@earth_relief_01d -Gnew.grd
+	gmt grdfill @earth_relief_20m_holes.grd -Ag@earth_relief_01d_g -Gnew.grd
 	gmt subplot begin 2x1 -R0/10/0/10 -JQ10c -Fs10c -Sc -Sr -A1+gwhite+r
 		gmt grdimage @earth_relief_20m_holes.grd -c
 		gmt grdimage new.grd -c
