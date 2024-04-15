@@ -15694,8 +15694,12 @@ struct GMT_CTRL *gmt_init_module (struct GMTAPI_CTRL *API, const char *lib_name,
 				gmt_refresh_server (API);	/* Refresh hash and info tables as needed */
 				remote_first = false;
 			}
-			if (gmt_set_unspecified_remote_registration (API, &(opt->arg)))	/* If argument is a remote file name then this handles any missing registration _p|_g */
+			char *tmp = strdup (opt->arg);
+			if (gmt_set_unspecified_remote_registration (API, &tmp)) {  /* If argument is a remote file name then this handles any missing registration _p|_g */
 				GMT_Report (API, GMT_MSG_DEBUG, "Revised remote file name to %s\n", opt->arg);
+				strcpy (opt->arg, tmp);
+				gmt_M_str_free (tmp);
+			}
 		}
 	}
 
