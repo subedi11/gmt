@@ -286,6 +286,7 @@ EXTERN_MSC int GMT_gmtwhich (void *V_API, int mode, void *args) {
 					Return (GMT_RUNTIME_ERROR);
 				memmove (path, &L[1], strlen (&L[1])+1);	/* Report the file in the local directory now */
 			}
+			strcpy (Out-text, path);
 			GMT_Put_Record (API, GMT_WRITE_DATA, Out);
 		}
 		else {	/* Did not find.  Report no or be quiet */
