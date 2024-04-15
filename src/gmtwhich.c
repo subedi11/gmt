@@ -292,6 +292,7 @@ EXTERN_MSC int GMT_gmtwhich (void *V_API, int mode, void *args) {
 		else {	/* Did not find.  Report no or be quiet */
 			if (Ctrl->C.active) {
 				strcpy (path, No);
+				strcpy (Out->text, path);
 				GMT_Put_Record (API, GMT_WRITE_DATA, Out);
 			}
 			GMT_Report (API, GMT_MSG_ERROR, "File %s not found!\n", &file[first]);
