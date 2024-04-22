@@ -9,6 +9,7 @@ on:
     branches:
       - master
       - 6.[0-9]+
+      - debug/cpack
     paths:
       - 'ci/**'
       - 'doc/**'
@@ -174,7 +175,7 @@ jobs:
           cmake --build . --target gmt_release_tar
           if [ "$RUNNER_OS" = "macOS" ]; then
             # Create macOS bundle
-            cpack -G Bundle
+            cpack -G Bundle --verbose --debug
           elif [ "$RUNNER_OS" = "Windows" ]; then
             # Don't use cpack here. Chocolatey also provides a cpack command.
             cmake --build . --target package
