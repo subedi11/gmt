@@ -6,8 +6,8 @@ set -e
 
 cat > cmake/ConfigUser.cmake << 'EOF'
 set (CMAKE_INSTALL_PREFIX "$ENV{INSTALLDIR}")
-set (GSHHG_ROOT "$ENV{COASTLINEDIR}/gshhg")
-set (DCW_ROOT "$ENV{COASTLINEDIR}/dcw")
+set (GSHHG_ROOT "${COASTLINEDIR}/gshhg")
+set (DCW_ROOT "${COASTLINEDIR}/dcw")
 
 set (GMT_ENABLE_OPENMP TRUE)
 
